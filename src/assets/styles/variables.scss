@@ -1,0 +1,310 @@
+@import './color.scss';
+//列表页的背景图片
+@mixin bgp {
+  background-color: $--color-bg;
+  background-image: url(https://lionmusician.oss-cn-hangzhou.aliyuncs.com/font/loading.gif);
+  background-position: center 40%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 241rpx 147rpx;
+}
+@mixin flex-nowrap {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+@mixin flex-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@mixin flex-center($justify, $align) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin count-ul-list {}
+
+//宽高
+@mixin wh($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+//字体大小，颜色
+@mixin sc($size, $color) {
+  font-size: $size;
+  color: $color;
+}
+
+//行高和高度相同
+@mixin hh($height) {
+  height: $height;
+  line-height: $height;
+}
+
+//flex 布局和 子元素 对其方式
+@mixin fj($type: space-between) {
+  display: flex;
+  justify-content: $type;
+  align-items: center;
+}
+
+//flex 布局和 子元素 对其方式
+@mixin fc($type: space-between) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: $type;
+}
+
+//单行省略号
+@mixin ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+//定位全屏，弹窗层
+@mixin allcover {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+//定位上下左右居中
+@mixin center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+//定位上下居中
+@mixin ct {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+//定位左右居中
+@mixin cl {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+//宽高
+@mixin wh($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+//字体大小，颜色
+@mixin sc($size, $color) {
+  font-size: $size;
+  color: $color;
+}
+
+//行高和高度相同
+@mixin hh($height) {
+  height: $height;
+  line-height: $height;
+}
+
+//flex 布局和 子元素 对其方式
+@mixin fj($type: space-between) {
+  display: flex;
+  justify-content: $type;
+  align-items: center;
+}
+
+//flex 布局和 子元素 对其方式
+@mixin fc($type: space-between) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: $type;
+}
+
+//单行省略号
+@mixin ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+//双行省略号
+@mixin ellipsis2 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+//三行省略号
+@mixin ellipsis3 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+//n行省略号
+@mixin ellipsisn($n: 3) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: $n;
+  -webkit-box-orient: vertical;
+}
+
+//下划线边框
+@mixin mb1 {
+  border-bottom: 1rpx solid #f5f5f5;
+}
+
+//绿色按钮
+@mixin btng {
+  background: linear-gradient(to right, #38c737, #09bb07);
+  border-radius: 10rpx;
+  text-align: center;
+  color: #ffffff;
+  font-size: 36rpx;
+}
+
+//红色按钮
+@mixin btnr {
+  background: linear-gradient(to right, #ff5b35, #f43530);
+  border-radius: 4rpx;
+  text-align: center;
+  color: #ffffff;
+  font-size: 36rpx;
+}
+
+//橙色按钮
+@mixin btno {
+  background: linear-gradient(to right, #ff9c00, #fe7201);
+  border-radius: 4rpx;
+  text-align: center;
+  color: #ffffff;
+  font-size: 36rpx;
+}
+
+//紫色按钮
+@mixin btnp {
+  background: linear-gradient(to right, #de4ae4, #a832e5);
+  border-radius: 4rpx;
+  text-align: center;
+  color: #ffffff;
+  font-size: 36rpx;
+}
+
+// flex布局一行内，子元素分组
+@mixin flexnowrap {
+  display: flex;
+  flex-wrap: nowrap;
+  &>li,
+  &>div,
+  &>p {
+      flex-grow: 1;
+  }
+}
+
+@mixin flexrighttext {
+  display: flex;
+  flex-wrap: nowrap;
+  &>div,
+  &>p,
+  &>span {
+      display: inline-block;
+      flex-grow: 1;
+      &:nth-child(2) {
+          text-align: right;
+      }
+  }
+}
+
+// flex上下左右剧中
+@mixin flexcenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// 以屏幕定位
+@mixin fixed($top, $bottom) {
+  position: fixed;
+  left: 0;
+  top: $top;
+  bottom: $bottom;
+  width: 100%;
+}
+
+// 底部边线
+@mixin border-b-gray {
+  border-bottom: 2rpx solid $--color-gray-f8;
+}
+
+// 上边线
+@mixin border-t-gray {
+  border-top: 2rpx solid $--color-gray-f8;
+}
+
+@mixin padding-10 {
+  padding: $spacing-s;
+}
+
+@mixin padding-20 {
+  padding: $spacing-x;
+}
+
+@mixin public-li {
+  padding-left: $spacing-m;
+  background-color: $--color-white;
+  li {
+      padding: $spacing-x;
+      border-bottom: 2rpx solid $--color-gray-f8;
+      line-height: $line-height-x;
+      padding-left: 0;
+  }
+}
+
+@mixin marginButton {
+  padding-bottom: 170rpx;
+}
+
+//长条按钮
+@mixin btn-l {
+  @include wh(690rpx, 90rpx);
+  @include sc($--text-xxxl, $--color-white);
+  background: $--color-btn;
+  line-height: 84rpx;
+  text-align: center;
+  border-radius: 10rpx;
+}
+
+@mixin colorBtn($color) {
+  background: $color;
+
+  &:hover {
+    color: $color;
+
+    &:before,
+    &:after {
+      background: $color;
+    }
+  }
+}
+

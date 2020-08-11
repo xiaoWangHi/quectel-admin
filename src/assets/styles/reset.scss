@@ -1,0 +1,128 @@
+/* 页面共用样式 */
+
+html,
+body,
+#app,
+.full {
+    height: 100%;
+    max-width: 100% !important;
+    overflow: hidden;
+}
+
+body {
+    padding-right: 0 !important;
+}
+
+div {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box !important;
+    box-sizing: border-box;
+}
+
+.scrollbar::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    color: transparent;
+}
+
+body {
+    font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    font-size: 14px;
+    color: #333333;
+}
+
+body,
+p,
+ul,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    list-style-type: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 400;
+}
+
+.float-right {
+    float: right;
+}
+
+.float-left {
+    float: left;
+}
+
+.clear::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+img {
+    width: 100%;
+}
+
+li {
+    box-sizing: border-box;
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+
+/* 谷歌 */
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+
+
+/* 火狐 */
+
+input {
+    -moz-appearance: textfield;
+}
+
+i.popover-i {
+    font-size: 16px;
+    margin-left: 10px;
+    color: #999999;
+}
+
+i.popover-blue {
+    font-size: 16px;
+    margin-left: 10px;
+    color: #409EFF;
+}
+
+a:hover,
+a:focus {
+  color: rgba(0,0,0,0);
+  text-decoration: underline;
+}
+
+a:focus {
+  outline: thin dotted rgba(0,0,0,0);
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}

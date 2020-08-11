@@ -1,0 +1,202 @@
+.el-button{
+  border: 1px solid #dbdbdb;
+  color: $--color-gray-9;
+}
+
+.el-button:hover{
+  border: 1px solid #dbdbdb;
+  color: #c2c2c2;
+}
+
+.el-button:hover, .el-button:focus{
+  background: none;
+}
+
+.el-button--primary{
+  background: linear-gradient(to right, $--color-primary, $--color-success);
+  border: none;
+  color: $--color-white;
+}
+
+.el-button--primary:hover, .el-button--primary:focus{
+  background: linear-gradient(to right, $--color-primary, $--color-success);
+  border: none;
+  color: #b6f2f2;
+}
+
+.el-button--danger{
+  background: linear-gradient(to right, $--color-danger, $--color-warning);
+  border: none;
+  color: $--color-white;
+}
+
+.el-button--danger:hover, .el-button--danger:focus{
+  background: linear-gradient(to right, $--color-danger, $--color-warning);
+  border: none;
+  color: #f7c7ac;
+}
+
+.el-button--warning {
+  border: none;
+  color: $--color-white;
+  background-color: #FAD961;
+  background-image: linear-gradient(272deg,#FAD961 0%,#F76B1C 100%);
+  background-image: -webkit-linear-gradient(272deg,#FAD961 0%,#F76B1C 100%);
+  background-image: -moz-linear-gradient(272deg,#FAD961 0%,#F76B1C 100%);
+  background-image: -o-linear-gradient(272deg,#FAD961 0%,#F76B1C 100%);
+} 
+.el-button--warning:hover, .el-button--warning:focus{
+  border: none;
+  color: #FBF2D5;
+  background-color: #FAD961;
+  background-image: linear-gradient(272deg,#FAD961 0%,#F76B1C 100%);
+  background-image: -webkit-linear-gradient(272deg,#FAD961 0%,#F76B1C 100%);
+  background-image: -moz-linear-gradient(272deg,#FAD961 0%,#F76B1C 100%);
+  background-image: -o-linear-gradient(272deg,#FAD961 0%,#F76B1C 100%);
+}
+
+.el-button--success{
+  border: none;
+  color: $--color-white;
+  background-color: #56ab2f;
+  background-image: linear-gradient(90deg,#56ab2f 0%,#a8e063 100%);
+  background-image: -webkit-linear-gradient(90deg,#56ab2f 0%,#a8e063 100%);
+  background-image: -moz-linear-gradient(90deg,#56ab2f 0%,#a8e063 100%);
+  background-image: -o-linear-gradient(90deg,#56ab2f 0%,#a8e063 100%);
+}
+
+.el-button--success:hover, .el-button--success:focus{
+  border: none;
+  color: #D0FBE4;
+  background-color: #56ab2f;
+  background-image: linear-gradient(90deg,#56ab2f 0%,#a8e063 100%);
+  background-image: -webkit-linear-gradient(90deg,#56ab2f 0%,#a8e063 100%);
+  background-image: -moz-linear-gradient(90deg,#56ab2f 0%,#a8e063 100%);
+  background-image: -o-linear-gradient(90deg,#56ab2f 0%,#a8e063 100%);
+}
+
+.el-button--info{
+  border: none;
+  color: $--color-white;
+  background-color: #e6e6e6;
+}
+
+.el-button--info:hover, .el-button--info:focus{
+  border: none;
+  color: $--color-white;
+  background-color: #e6e6e6;
+}
+
+.el-button--mini{
+  padding: 6px 13px;
+}
+
+.el-button--text, .el-button--text:active, .el-button--text:hover, .el-button--text:focus{
+  border: none;
+}
+
+// 去除表格边框
+.el-table--border th, .el-table--border td{
+  // border: none;
+}
+.el-table__body td{
+  border: none;
+}
+// 表格斑马纹样式
+.el-table--striped .el-table__body tr.el-table__row--striped td {
+  background: $--color-bg !important;
+}
+
+// 弹框样式修改
+.el-message-box{
+  padding: 0 10px 10px 10px;
+  .el-message-box__header{
+    border-bottom: 1px solid $--color-gray-d;
+    @include fj;
+    padding-top: 10px;
+  }
+  .el-message-box__headerbtn{
+    position: static;
+    // top: 15px;
+    // right: 15px;
+    // padding: 0;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  .el-message-box--center .el-message-box__content{
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  .el-message-box__btns{
+    .el-button{
+      padding: 10px 30px;
+    }
+  }
+}
+
+
+// 对话框样式
+.el-dialog{
+  padding: 14px 20px;
+  .el-dialog__header{
+    padding: 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid $--color-gray-d;
+  }
+  .el-dialog__footer{
+    padding: 0;
+  }
+}
+
+// 当前标签颜色
+.el-tabs__active-bar{
+  background: linear-gradient(to right, $--color-primary, $--color-success);
+  background-image: linear-gradient(90deg,$--color-primary 0%,$--color-success 100%);
+  background-image: -webkit-linear-gradient(90deg,$--color-primary 0%,$--color-success 100%);
+  background-image: -moz-linear-gradient(90deg,$--color-primary 0%,$--color-success 100%);
+  background-image: -o-linear-gradient(90deg,$--color-primary 0%,$--color-success 100%);
+}
+
+/*
+* 表单样式
+*/ 
+.el-form-item__label{
+  color: $--color-menu;
+  font-weight: 520;
+}
+
+input::-webkit-input-placeholder{
+  color: $--color-placeholder;
+}
+
+
+/**
+ *  进度条
+*/
+.el-progress-bar__inner{
+  background: linear-gradient(to right, $--color-primary, $--color-success);
+  background-image: -webkit-linear-gradient(90deg,$--color-primary 0%,$--color-success 100%);
+  background-image: -moz-linear-gradient(90deg,$--color-primary 0%,$--color-success 100%);
+  background-image: -o-linear-gradient(90deg,$--color-primary 0%,$--color-success 100%);
+}
+.el-progress.is-success .el-progress-bar__inner{
+  background-image: linear-gradient(90deg,#56ab2f 0%,#a8e063 100%);
+  background-image: -webkit-linear-gradient(90deg,#56ab2f 0%,#a8e063 100%);
+  background-image: -moz-linear-gradient(90deg,#56ab2f 0%,#a8e063 100%);
+  background-image: -o-linear-gradient(90deg,#56ab2f 0%,#a8e063 100%);
+}
+.el-progress.is-warning .el-progress-bar__inner{
+  background-image: linear-gradient(272deg,#FAD961 0%,#F76B1C 100%);
+  background-image: -webkit-linear-gradient(272deg,#FAD961 0%,#F76B1C 100%);
+  background-image: -moz-linear-gradient(272deg,#FAD961 0%,#F76B1C 100%);
+  background-image: -o-linear-gradient(272deg,#FAD961 0%,#F76B1C 100%);
+}
+.el-progress.is-exception .el-progress-bar__inner{
+  background: linear-gradient(to right, $--color-danger, $--color-warning);
+  background-image: -webkit-linear-gradient(272deg,$--color-danger 0%,$--color-warning 100%);
+  background-image: -moz-linear-gradient(272deg,$--color-danger 0%,$--color-warning 100%);
+  background-image: -o-linear-gradient(272deg,$--color-danger 0%,$--color-warning 100%);
+}
