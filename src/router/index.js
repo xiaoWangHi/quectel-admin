@@ -17,6 +17,15 @@ const Home = r => require.ensure([], () => r(require('@/views/home/index.vue')),
 /* 重定向 */
 const Redirect = r => require.ensure([], () => r(require('@/views/redirect/index.vue')))
 
+/* 404 */
+const Error_404 = r => require.ensure([], () => r(require('@/views/error-page/404.vue')))
+
+/* 403 */
+const Error_403 = r => require.ensure([], () => r(require('@/views/error-page/403.vue')))
+
+/* 401 */
+const Error_401 = r => require.ensure([], () => r(require('@/views/error-page/401.vue')))
+
 /**
  *
  * hidden: true        是否出现在侧边
@@ -70,6 +79,18 @@ export const constantRoutes = [
         meta: { title: 'home', affix: true }
       }
     ]
+  }, {
+    path: '/404',
+    component: Error_404,
+    hidden: true
+  }, {
+    path: '/403',
+    component: Error_403,
+    hidden: true
+  }, {
+    path: '/401',
+    component: Error_401,
+    hidden: true
   }
 ]
 

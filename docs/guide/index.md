@@ -7,7 +7,8 @@ vue-element-admin 是一个后台前端解决方案，它基于 vue 和 element-
 
 **内置功能**
 
-```
+```bash
+
 - 登录
 
 - 权限验证

@@ -5,7 +5,7 @@ module.exports = {
   themeConfig: {
     nav: [
       { text: '使用手册', link: '/guide/' },
-      { text: 'GitHub', link: 'https://github.com/' }
+      { text: 'GitHub', link: 'https://github.com/xiaoWangHi/quectel-admin.git' }
     ],
     sidebar: [
       {

@@ -4,28 +4,24 @@
 
 import { injectComponentOption, ensureAsyncComponentsLoaded } from '@app/util'
 import rootMixins from '@internal/root-mixins'
-import GlobalLayout from "C:\\Users\\emma.wang\\Desktop\\quectelWork\\hrSystem\\hr-system\\node_modules\\_@vuepress_core@1.5.3@@vuepress\\core\\lib\\client\\components\\GlobalLayout.vue"
+import GlobalLayout from "C:\\Users\\emma.wang\\Desktop\\github\\quectel-admin\\node_modules\\_@vuepress_core@1.5.3@@vuepress\\core\\lib\\client\\components\\GlobalLayout.vue"
 
 injectComponentOption(GlobalLayout, 'mixins', rootMixins)
 export const routes = [
   {
-    name: "v-fc70ccf0",
-    path: "/",
+    name: "v-15f0b525",
+    path: "/guide/install.html",
     component: GlobalLayout,
     beforeEnter: (to, from, next) => {
-      ensureAsyncComponentsLoaded("Layout", "v-fc70ccf0").then(next)
+      ensureAsyncComponentsLoaded("Layout", "v-15f0b525").then(next)
     },
   },
   {
-    path: "/index.html",
-    redirect: "/"
-  },
-  {
-    name: "v-92315242",
+    name: "v-6fcf8484",
     path: "/guide/",
     component: GlobalLayout,
     beforeEnter: (to, from, next) => {
-      ensureAsyncComponentsLoaded("Layout", "v-92315242").then(next)
+      ensureAsyncComponentsLoaded("Layout", "v-6fcf8484").then(next)
     },
   },
   {
@@ -33,20 +29,24 @@ export const routes = [
     redirect: "/guide/"
   },
   {
-    name: "v-7128c086",
-    path: "/guide/install.html",
-    component: GlobalLayout,
-    beforeEnter: (to, from, next) => {
-      ensureAsyncComponentsLoaded("Layout", "v-7128c086").then(next)
-    },
-  },
-  {
-    name: "v-648f7bc6",
+    name: "v-7603ee36",
     path: "/guide/Directory.html",
     component: GlobalLayout,
     beforeEnter: (to, from, next) => {
-      ensureAsyncComponentsLoaded("Layout", "v-648f7bc6").then(next)
+      ensureAsyncComponentsLoaded("Layout", "v-7603ee36").then(next)
     },
+  },
+  {
+    name: "v-817b6fee",
+    path: "/",
+    component: GlobalLayout,
+    beforeEnter: (to, from, next) => {
+      ensureAsyncComponentsLoaded("Layout", "v-817b6fee").then(next)
+    },
+  },
+  {
+    path: "/index.html",
+    redirect: "/"
   },
   {
     path: '*',

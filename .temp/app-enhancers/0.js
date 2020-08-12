@@ -1,1 +1,1 @@
-export { default } from "C:\\Users\\emma.wang\\Desktop\\quectelWork\\hrSystem\\hr-system\\docs\\.vuepress\\enhanceApp.js"
+export { default } from "C:\\Users\\emma.wang\\Desktop\\github\\quectel-admin\\docs\\.vuepress\\enhanceApp.js"

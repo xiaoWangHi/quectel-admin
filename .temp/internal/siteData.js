@@ -8,6 +8,37 @@ export const siteData = {
   "headTags": [],
   "pages": [
     {
+      "title": "安装",
+      "frontmatter": {},
+      "regularPath": "/guide/install.html",
+      "relativePath": "guide/install.md",
+      "key": "v-15f0b525",
+      "path": "/guide/install.html",
+      "headers": [
+        {
+          "level": 3,
+          "title": "安装",
+          "slug": "安装"
+        }
+      ]
+    },
+    {
+      "title": "介绍",
+      "frontmatter": {},
+      "regularPath": "/guide/",
+      "relativePath": "guide/index.md",
+      "key": "v-6fcf8484",
+      "path": "/guide/"
+    },
+    {
+      "title": "目录结构",
+      "frontmatter": {},
+      "regularPath": "/guide/Directory.html",
+      "relativePath": "guide/Directory.md",
+      "key": "v-7603ee36",
+      "path": "/guide/Directory.html"
+    },
+    {
       "title": "Home",
       "frontmatter": {
         "home": true,
@@ -34,39 +65,8 @@ export const siteData = {
       },
       "regularPath": "/",
       "relativePath": "README.md",
-      "key": "v-fc70ccf0",
+      "key": "v-817b6fee",
       "path": "/"
-    },
-    {
-      "title": "介绍",
-      "frontmatter": {},
-      "regularPath": "/guide/",
-      "relativePath": "guide/index.md",
-      "key": "v-92315242",
-      "path": "/guide/"
-    },
-    {
-      "title": "安装",
-      "frontmatter": {},
-      "regularPath": "/guide/install.html",
-      "relativePath": "guide/install.md",
-      "key": "v-7128c086",
-      "path": "/guide/install.html",
-      "headers": [
-        {
-          "level": 3,
-          "title": "安装",
-          "slug": "安装"
-        }
-      ]
-    },
-    {
-      "title": "目录结构",
-      "frontmatter": {},
-      "regularPath": "/guide/Directory.html",
-      "relativePath": "guide/Directory.md",
-      "key": "v-648f7bc6",
-      "path": "/guide/Directory.html"
     }
   ],
   "themeConfig": {
@@ -77,7 +77,7 @@ export const siteData = {
       },
       {
         "text": "GitHub",
-        "link": "https://github.com/"
+        "link": "https://github.com/xiaoWangHi/quectel-admin.git"
       }
     ],
     "sidebar": [

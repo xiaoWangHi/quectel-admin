@@ -1,7 +1,7 @@
 # 目录结构
 ---
 
-```
+```bash
 ├── docs                       # 项目文档目录
 ├── public                     # 静态资源
 │   │── favicon.ico            # favicon图标

@@ -16,6 +16,10 @@ router.beforeEach(async(to, from, next) => {
   if(flag === 0) {
     try {
       const accessRoutes = await store.dispatch('permission/generateRoutes')
+      accessRoutes.push({
+        path: '*',
+        redirect: '/404'
+      })
       router.addRoutes(accessRoutes)
       flag++
       next({ ...to, replace: true })
