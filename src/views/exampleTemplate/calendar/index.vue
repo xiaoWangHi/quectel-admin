@@ -30,7 +30,7 @@
     </div>
     <el-row>
       <el-col :span="18">
-        <calendar
+        <q-calendar
           v-model="date"
           :title='formData.title'
           :dateType='formData.dateType'
@@ -38,17 +38,16 @@
           :render='formData.render ? render : null'
           :defaultDay='false'
           @calendarClick="calendarClick">
-        </calendar>
+        </q-calendar>
       </el-col>
     </el-row>
   </div>
 </template>
 
 <script>
-import { Calendar, CalendarItem } from 'components'
+import QuectelUI from 'quectel-ui'
 export default {
   name: 'calendarView',
-  components: { Calendar, CalendarItem },
   data() {
     return {
       date: new Date().getTime(),
@@ -95,7 +94,7 @@ export default {
           list: arr[day] ? arr[day].list : null,
           text: arr[day] ? arr[day].text : null
         }
-        return h(CalendarItem, { ref: 'item', props: props })
+        return h(QuectelUI.CalendarItem, { ref: 'item', props: props })
       }
     }
   },

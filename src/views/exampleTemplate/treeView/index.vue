@@ -2,7 +2,7 @@
   <div class="padding10 tree-container">
     <el-row :gutter="20">
       <el-col :span="12">
-        <tree-list :nameIcon="formData.nameIcon"
+        <q-tree-list :nameIcon="formData.nameIcon"
                    :title="formData.title"
                    :showCheckbox="formData.showCheckbox"
                    :inputFilter="formData.inputFilter"
@@ -17,7 +17,7 @@
                    @btnClick="btnAllClick"
                    @handleDrop="handleDrop"
                    @check='check'
-                   @handleNodeClick='handleNodeClick'></tree-list>
+                   @handleNodeClick='handleNodeClick'></q-tree-list>
       </el-col>
       <el-col :span="12" class="padding10">
         <el-form :model="formData" class="padding10" label-width="200px" size='mini'>
@@ -58,10 +58,8 @@
 </template>
 
 <script>
-import { TreeList } from 'components'
 import TREE_JSON from './tree.json'
 export default {
-  components: { TreeList },
   data() {
     return {
       formData: {

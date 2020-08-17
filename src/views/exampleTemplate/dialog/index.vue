@@ -25,15 +25,13 @@
   </div>
 
   <!-- 表单弹框 -->
-  <form-dialog :option="dialogOption" :formList='formOption.fromList' :formModel='formOption.formModel' :rules='formOption.formRules' @close='dialogClose'></form-dialog>
+  <q-form-dialog :option="dialogOption" :formList='formOption.fromList' :formModel='formOption.formModel' :rules='formOption.formRules' @close='dialogClose'></q-form-dialog>
 </div>
 </template>
 
 <script>
-import { FormDialog } from 'components'
 export default {
   name: 'dialogView',
-  components: { FormDialog },
   data() {
     return {
       dialogOption: { // 弹框基本设置

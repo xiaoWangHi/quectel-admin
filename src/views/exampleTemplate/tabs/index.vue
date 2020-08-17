@@ -18,13 +18,13 @@
         <el-switch v-model="tabList[2].disabled"></el-switch>
       </el-form-item>
     </el-form>
-    <index-tabs :innerList="tabList"
+    <q-index-tabs :innerList="tabList"
                 :tabPosition="formData.tabPosition"
                 :tabType='formData.tabType'
                 :closable="formData.closable"
                 :stretch='formData.stretch'
                 @tabClick='tabClick'
-                @tabRemove="tabRemove"></index-tabs>
+                @tabRemove="tabRemove"></q-index-tabs>
   </div>
 </template>
 
@@ -32,10 +32,9 @@
 import TabsOne from '../table/index.vue'
 import TabsTwo from '../icon/index.vue'
 import TabsThree from '../button/index.vue'
-import { IndexTabs } from 'components'
 export default {
   name: 'tabs',
-  components: { TabsOne, TabsTwo, TabsThree, IndexTabs },
+  components: { TabsOne, TabsTwo, TabsThree },
   data() {
     return {
       formData: {

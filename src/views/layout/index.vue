@@ -9,7 +9,7 @@
       </el-header>
       <el-row>
         <el-col :span="8" class="text-left" v-if="isBreadCrumb">
-          <bread-crumb></bread-crumb>
+          <q-breadcrumb></q-breadcrumb>
         </el-col>
         <el-col :span="16" class="text-right" v-if="needTagsView">
           <div class="TagsView">
@@ -25,14 +25,12 @@
 </template>
 <script>
 import { HrHeader, HrMenu, HrMain, TagsView } from './components'
-import BreadCrumb from '../../components/Breadcrumb'
 import { mapGetters } from 'vuex'
 export default {
   components: {
     HrHeader,
     HrMenu,
     HrMain,
-    BreadCrumb,
     TagsView
   },
   computed: {

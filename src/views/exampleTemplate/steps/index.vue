@@ -1,6 +1,6 @@
 <template>
   <div class="padding10 stepsDiv">
-    <steps  v-model='active'
+    <q-steps  v-model='active'
             :list='stepsList'
             :title='formData.title'
             :direction="formData.direction"
@@ -34,15 +34,13 @@
           </el-form-item>
         </el-form>
       </div>
-    </steps>
+    </q-steps>
   </div>
 </template>
 
 <script>
-import { Steps } from 'components'
 export default {
   name: 'stepsView',
-  components: { Steps },
   data() {
     return {
       active: 0,

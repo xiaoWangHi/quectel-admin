@@ -3,12 +3,12 @@
     <el-row :gutter="10">
       <el-col :span="12">
         <div class="charts">
-          <chart :option="pieOption" id="pie"></chart>
+          <q-charts :option="pieOption" id="pie"></q-charts>
         </div>
       </el-col>
       <el-col :span="12">
         <div class="charts">
-          <chart :option="barOption" id='bar'></chart>
+          <q-charts :option="barOption" id='bar'></q-charts>
         </div>
       </el-col>
     </el-row>
@@ -16,12 +16,12 @@
     <el-row :gutter="10">
       <el-col :span="12">
         <div class="charts">
-          <chart :option="lineOption" id='line'></chart>
+          <q-charts :option="lineOption" id='line'></q-charts>
         </div>
       </el-col>
       <el-col :span="12">
         <div class="charts">
-          <chart :option='mapOption' id="map"></chart>
+          <q-charts :option='mapOption' id="map"></q-charts>
         </div>
       </el-col>
     </el-row>
@@ -29,10 +29,8 @@
 </template>
 
 <script>
-import { BarChart, Chart } from 'components'
 export default {
-  name: 'charts',
-  components: { BarChart, Chart },
+  name: 'chart',
   data() {
     const xAxisData = []; const data1 = []; const data2 = []
     for (var i = 0; i < 10; i++) {

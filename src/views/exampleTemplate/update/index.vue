@@ -3,12 +3,12 @@
     <!-- 单文件上传 -->
     <div class="exampleDiv">
       <div class="title h3">单文件上传：</div>
-      <up-load action="" :data='{}'>
+      <q-upload action="" :data='{}'>
         <div slot="upload-btn">
             <img v-if="serviceForm.pic" :src="serviceForm.pic" class="avatar">
             <i v-else class="el-icon-plus avatar-uploader-icon"></i>
         </div>
-      </up-load>
+      </q-upload>
     </div>
     <!-- 多文件上传 -->
     <div class="exampleDiv">
@@ -30,10 +30,8 @@
 </template>
 
 <script>
-import { UpLoad } from 'components'
 export default {
   name: 'update',
-  components: { UpLoad },
   data() {
     return {
       serviceForm: {

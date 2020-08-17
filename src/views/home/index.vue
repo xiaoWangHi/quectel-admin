@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col">
         <div class="col-content">
-          <to-do-list title='待审核'></to-do-list>
+          <q-todo-list title='待审核'></q-todo-list>
         </div>
       </div>
       <div class="col">
@@ -12,7 +12,7 @@
             <div class="h3 titleColor">在线人数</div>
             <div class="fj font12 contentColor pointer">更多&nbsp;&nbsp;<i class="el-icon-arrow-right"></i> </div>
           </div><br/><br/>
-          <bar-chart />
+          <q-bar-chart />
         </div>
       </div>
       <div class="col">
@@ -22,7 +22,7 @@
             <div class="fj font12 contentColor pointer">更多&nbsp;&nbsp;<i class="el-icon-arrow-right"></i> </div>
           </div><br/><br/>
           <div class="chartDiv">
-            <chart :option="pieOption" id="pie"></chart>
+            <q-charts :option="pieOption" id="pie"></q-charts>
           </div>
         </div>
       </div>
@@ -37,50 +37,50 @@
           <el-row>
             <el-col :span="12">
               <div class="countDiv">
-                <count-to :value="999" title="新增员工" :color='color()'></count-to>
+                <q-count-to :value="999" title="新增员工" :color='color()'></q-count-to>
               </div>
             </el-col>
             <el-col :span="12">
-              <count-to :value="14567" title="迟到员工"  :color='color()'></count-to>
+              <q-count-to :value="14567" title="迟到员工"  :color='color()'></q-count-to>
             </el-col>
           </el-row>
           <br/>
           <el-row>
             <el-col :span="12">
-              <count-to :value="9757" title="迟到员工" :color='color()'></count-to>
+              <q-count-to :value="9757" title="迟到员工" :color='color()'></q-count-to>
             </el-col>
             <el-col :span="12">
-              <count-to :value="5686" title="迟到员工" :color='color()'></count-to>
-            </el-col>
-          </el-row>
-          <br/>
-          <el-row>
-            <el-col :span="12">
-              <count-to :value="23333" title="迟到员工" :color='color()'></count-to>
-            </el-col>
-            <el-col :span="12">
-              <count-to :value="0" title="迟到员工" :color='color()'></count-to>
+              <q-count-to :value="5686" title="迟到员工" :color='color()'></q-count-to>
             </el-col>
           </el-row>
           <br/>
           <el-row>
             <el-col :span="12">
-              <count-to v-model="count" title="迟到员工" :color='color()'></count-to>
+              <q-count-to :value="23333" title="迟到员工" :color='color()'></q-count-to>
             </el-col>
             <el-col :span="12">
-              <count-to v-model="count" title="迟到员工" :color='color()'></count-to>
+              <q-count-to :value="0" title="迟到员工" :color='color()'></q-count-to>
+            </el-col>
+          </el-row>
+          <br/>
+          <el-row>
+            <el-col :span="12">
+              <q-count-to v-model="count" title="迟到员工" :color='color()'></q-count-to>
+            </el-col>
+            <el-col :span="12">
+              <q-count-to v-model="count" title="迟到员工" :color='color()'></q-count-to>
             </el-col>
           </el-row>
         </div>
       </div>
       <div class="col">
         <div class="col-content">
-           <to-do-list title='公司动态' btnType='link'></to-do-list>
+           <q-todo-list title='公司动态' btnType='link'></q-todo-list>
         </div>
       </div>
       <div class="col">
         <div class="col-content">
-           <to-do-list title='待审核'></to-do-list>
+           <q-todo-list title='待审核'></q-todo-list>
         </div>
       </div>
     </div>
@@ -88,13 +88,8 @@
 </template>
 
 <script>
-import { ToDoList, BarChart, Chart, CountTo } from 'components'
-
 export default {
   name: 'home',
-  components: {
-    ToDoList, BarChart, Chart, CountTo
-  },
   data() {
     return {
       count: 13600,
