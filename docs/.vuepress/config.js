@@ -26,15 +26,15 @@ module.exports = {
           },
           {
             title: '页面布局',
-            path: '/guide/install'
+            path: '/guide/layout'
           },
           {
-            title: '路由',
-            path: '/guide/install'
+            title: '路由和导航',
+            path: '/guide/router'
           },
           {
             title: 'Mock',
-            path: '/guide/install'
+            path: '/guide/mock'
           },
           {
             title: '与后端接口调试',

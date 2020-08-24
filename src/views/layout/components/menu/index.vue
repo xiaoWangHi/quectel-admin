@@ -1,17 +1,18 @@
 <template>
-  <div class="menu-container">
+  <div :class="isCollapse ? 'menu-container-collapse' : 'menu-container'">
     <div class="img-box">
-      <img src="../../../../assets/images/logo297.png" alt="">
+      <img v-if="isCollapse" src="../../../../assets/images/logo297.png" alt="">
+      <img v-else src="../../../../assets/images/logo297.png" alt="">
     </div>
     <div class="menu-content">
-      <el-menu router :default-active="activeIndex" text-color="#fff" active-text-color="#fff">
+      <el-menu router :default-active="activeIndex" :text-color="isCollapse ? '#1e1e1e' : '#fff'" :active-text-color="isCollapse ? '#2ab1e8' : '#fff'" :collapse='isCollapse'>
         <div v-for="(item, index) in menuRoute" :key="index">
           <!-- 一级菜单 -->
           <router-link tag="div" v-if="!item.children || !item.children.length" replace :to="resolvePath(item.path)">
             <el-menu-item :index="item.path">
               <div class="title">
                 <i class="iconfont" :class="item.meta.icon"></i>
-                <span slot="title">{{$t('menu.' + item.meta.title)}}</span>
+                <span slot="title" v-if="!isCollapse">{{$t('menu.' + item.meta.title)}}</span>
               </div>
             </el-menu-item>
           </router-link>
@@ -21,7 +22,7 @@
                 <el-menu-item :index="resolvePath(onlyOneChild.path)">
                   <div class="title">
                     <i class="iconfont" :class="onlyOneChild.meta.icon"></i>
-                    <span>{{$t('menu.' + onlyOneChild.meta.title)}}</span>
+                    <span v-if="!isCollapse">{{$t('menu.' + onlyOneChild.meta.title)}}</span>
                   </div>
                 </el-menu-item>
               </router-link>
@@ -29,7 +30,7 @@
             <el-submenu :index="item.path" v-else>
               <template slot="title">
                 <i class="iconfont" :class="item.meta.icon"></i>
-                <span>{{$t('menu.' + item.meta.title)}}</span>
+                <span v-if="!isCollapse">{{$t('menu.' + item.meta.title)}}</span>
               </template>
               <router-link tag="div" v-for="(child, cIndex) in item.children" :key="cIndex" replace :to="resolvePath(child.path)">
                 <el-menu-item :index="child.path">
@@ -53,7 +54,7 @@ import { mapGetters } from 'vuex'
 import v from 'utils/validate'
 export default {
   computed: {
-    ...mapGetters(['permission_routes', 'menuActive']),
+    ...mapGetters(['permission_routes', 'menuActive', 'isCollapse']),
     activeIndex() {
       return this.$route.path
     },
@@ -73,7 +74,6 @@ export default {
   data() {
     this.onlyOneChild = null
     return {
-      // activeIndex: '',
       squareUrl: '../../../../assets/images/quectel.jpg',
       menuList: []
     }
@@ -192,6 +192,111 @@ export default {
       }
       .el-submenu__title:hover{
         background-color: rgba(0,0,0,0) !important
+      }
+    }
+  }
+  .menu-content::-webkit-scrollbar {
+    width : 0px;
+    height: 10px;
+  }
+  .menu-content::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0);
+  }
+  .menu-content::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0);
+  }
+}
+.menu-container-collapse{
+  @include fc;
+  height: 100%;
+  background: url('../../../../assets/images/bg.png') no-repeat center center;
+  background-size: cover;
+  overflow: hidden;
+  .img-box{
+    width: 90px;
+    height: 60px;
+    line-height: 60px;
+    overflow: hidden;
+    margin: 0 auto;
+    margin-top: 20px;
+    border-bottom: 1px solid rgba(250, 250, 250, 0.15);
+    img{
+      width: auto;
+      height: auto;
+      max-width: 90px;
+      max-height: 60px;
+    }
+  }
+  .menu-content{
+    flex: 1;
+    width: 100%;
+    overflow-y: auto;
+    /deep/ .el-menu{
+      border-right: none;
+      background: rgba(255, 255, 255, 0);
+      i{
+        color: $--color-white;
+        margin-right: 10px;
+        font-size: 18px;
+      }
+      .el-menu-item{
+        position: relative;
+      }
+      .el-menu-item{
+        position: relative;
+        padding-left: 0 !important;
+        .title{
+          padding-left: 20px;
+        }
+        .child-title, .child-title-active{
+          padding-left: 40px;
+        }
+      }
+      .el-icon-arrow-right{
+        display: none;
+      }
+      .is-active{
+        .el-submenu__title, .el-submenu__title:hover{
+          position: absolute;
+          left: 0;
+          top: 50%;
+          width: 90%;
+          height: 40px;
+          line-height: 40px;
+          // margin-top: -20px;
+          background: $--color-white;
+          border-radius: 0 20px 20px 0;
+          font-weight: 550;
+          color:  $--color-menu;
+          i{
+            color: $--color-menu
+          }
+        }
+        .title,.child-title-active{
+          position: absolute;
+          left: 0;
+          top: 50%;
+          width: 90%;
+          height: 40px;
+          line-height: 40px;
+          margin-top: -20px;
+          background: $--color-white;
+          border-radius: 0 20px 20px 0;
+          font-weight: 550;
+          color:  $--color-menu;
+          i{
+            color: $--color-menu
+          }
+        }
+      }
+      .el-submenu__title,.el-menu-item,.el-menu-item-group__title{
+        text-align: left;
+      }
+      .el-menu-item:hover {
+        background-color: rgba(255,255,255,0.1) !important;
+      }
+      .el-menu-item:focus{
+        background-color: rgba(0,0,0,0) !important;
       }
     }
   }

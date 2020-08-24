@@ -10,7 +10,8 @@ const globals = {
     IE9: navigator.userAgent.indexOf('MSIE 9.0') > -1,
     isIE: !!window.ActiveXObject || 'ActiveXObject' in window,
     upBtn: true,
-    isBreadCrumb: true
+    isBreadCrumb: true,
+    isCollapse: true
   },
   mutations: {
     setMsec: (state, msec) => {
@@ -32,6 +33,9 @@ const globals = {
     },
     SET_UP_BTN: (state, status) => {
       state.upBtn = status
+    },
+    SET_IS_COLLAPSE: (state, collapse) => {
+      state.isCollapse = collapse
     }
   },
   actions: {
@@ -48,6 +52,9 @@ const globals = {
     },
     GetTheme({ commit }) {
       commit('setTheme')
+    },
+    setCollapse({ commit }, state) {
+      commit('SET_IS_COLLAPSE', state)
     }
   }
 }

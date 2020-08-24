@@ -8,35 +8,24 @@ export const siteData = {
   "headTags": [],
   "pages": [
     {
-      "title": "安装",
+      "title": "布局",
       "frontmatter": {},
-      "regularPath": "/guide/install.html",
-      "relativePath": "guide/install.md",
-      "key": "v-15f0b525",
-      "path": "/guide/install.html",
+      "regularPath": "/guide/layout.html",
+      "relativePath": "guide/layout.md",
+      "key": "v-b2c0ef52",
+      "path": "/guide/layout.html",
       "headers": [
         {
           "level": 3,
-          "title": "安装",
-          "slug": "安装"
+          "title": "配置页面",
+          "slug": "配置页面"
+        },
+        {
+          "level": 3,
+          "title": "配置自定义页面",
+          "slug": "配置自定义页面"
         }
       ]
-    },
-    {
-      "title": "介绍",
-      "frontmatter": {},
-      "regularPath": "/guide/",
-      "relativePath": "guide/index.md",
-      "key": "v-6fcf8484",
-      "path": "/guide/"
-    },
-    {
-      "title": "目录结构",
-      "frontmatter": {},
-      "regularPath": "/guide/Directory.html",
-      "relativePath": "guide/Directory.md",
-      "key": "v-7603ee36",
-      "path": "/guide/Directory.html"
     },
     {
       "title": "Home",
@@ -67,6 +56,117 @@ export const siteData = {
       "relativePath": "README.md",
       "key": "v-817b6fee",
       "path": "/"
+    },
+    {
+      "title": "目录结构",
+      "frontmatter": {},
+      "regularPath": "/guide/Directory.html",
+      "relativePath": "guide/Directory.md",
+      "key": "v-7603ee36",
+      "path": "/guide/Directory.html"
+    },
+    {
+      "title": "介绍",
+      "frontmatter": {},
+      "regularPath": "/guide/",
+      "relativePath": "guide/index.md",
+      "key": "v-6fcf8484",
+      "path": "/guide/"
+    },
+    {
+      "title": "路由和导航",
+      "frontmatter": {},
+      "regularPath": "/guide/router.html",
+      "relativePath": "guide/router.md",
+      "key": "v-fd1db64e",
+      "path": "/guide/router.html",
+      "headers": [
+        {
+          "level": 3,
+          "title": "路由和导航",
+          "slug": "路由和导航"
+        },
+        {
+          "level": 3,
+          "title": "配置项",
+          "slug": "配置项"
+        },
+        {
+          "level": 3,
+          "title": "路由",
+          "slug": "路由"
+        }
+      ]
+    },
+    {
+      "title": "框架安装",
+      "frontmatter": {},
+      "regularPath": "/guide/install.html",
+      "relativePath": "guide/install.md",
+      "key": "v-15f0b525",
+      "path": "/guide/install.html",
+      "headers": [
+        {
+          "level": 3,
+          "title": "框架安装",
+          "slug": "框架安装"
+        },
+        {
+          "level": 3,
+          "title": "UI组件安装",
+          "slug": "ui组件安装"
+        }
+      ]
+    },
+    {
+      "title": "Mock Data",
+      "frontmatter": {},
+      "regularPath": "/guide/mock.html",
+      "relativePath": "guide/mock.md",
+      "key": "v-4c71d552",
+      "path": "/guide/mock.html",
+      "headers": [
+        {
+          "level": 3,
+          "title": "Mock Data",
+          "slug": "mock-data"
+        },
+        {
+          "level": 3,
+          "title": "Mockjs",
+          "slug": "mockjs"
+        },
+        {
+          "level": 3,
+          "title": "移除",
+          "slug": "移除"
+        },
+        {
+          "level": 3,
+          "title": "新增",
+          "slug": "新增"
+        },
+        {
+          "level": 3,
+          "title": "修改",
+          "slug": "修改"
+        },
+        {
+          "level": 3,
+          "title": "多个 server",
+          "slug": "多个-server"
+        },
+        {
+          "level": 3,
+          "title": "启用纯前端 Mock",
+          "slug": "启用纯前端-mock"
+        },
+        {
+          "level": 3,
+          "title": "本地 Mock 数据与线上数据切换",
+          "slug": "本地-mock-数据与线上数据切换"
+        }
+      ]
     }
   ],
   "themeConfig": {
@@ -99,15 +199,15 @@ export const siteData = {
           },
           {
             "title": "页面布局",
-            "path": "/guide/install"
+            "path": "/guide/layout"
           },
           {
-            "title": "路由",
-            "path": "/guide/install"
+            "title": "路由和导航",
+            "path": "/guide/router"
           },
           {
             "title": "Mock",
-            "path": "/guide/install"
+            "path": "/guide/mock"
           },
           {
             "title": "与后端接口调试",

@@ -1,6 +1,6 @@
 <template>
-  <el-container class="app-container">
-    <el-aside class="left-container" width="220px">
+  <el-container :class="isCollapse ? 'app-container-collapse' : 'app-container'">
+    <el-aside class="left-container" :width="isCollapse ? '90px' : '220px'">
       <hr-menu></hr-menu>
     </el-aside>
     <el-container class="right-container">
@@ -34,7 +34,7 @@ export default {
     TagsView
   },
   computed: {
-    ...mapGetters(['needTagsView', 'isBreadCrumb'])
+    ...mapGetters(['needTagsView', 'isBreadCrumb', 'isCollapse'])
   },
   data() {
     return {
@@ -52,6 +52,40 @@ export default {
   width: 100vw;
   .left-container{
     width: 220px;
+    transition: width 0.5s ease;
+    // background: linear-gradient($--color-primary, $--color-success);
+    background: $--color-menu;
+    box-shadow: 0 0 18px rgba(42, 177, 232, 0.1);
+    padding-right: 20px
+  }
+  .right-container{
+    width: 100%;
+    background: $--color-bg;
+    margin-left: -20px;
+    border-radius: 20px 0 0 20px;
+    overflow: hidden;
+    .el-header{
+      background: $--color-white;
+      padding: 0;
+    }
+    /deep/ .el-main{
+      overflow-x: hidden;
+      overflow: hidden;
+      padding: 10px 20px;
+    }
+    .TagsView{
+      @include fj(center);
+      height: 45px;
+      padding-right: 10px;
+    }
+  }
+}
+.app-container-collapse{
+  height: 100vh;
+  width: 100vw;
+  .left-container{
+    width: 90px;
+    transition: width 0.5s ease;
     // background: linear-gradient($--color-primary, $--color-success);
     background: $--color-menu;
     box-shadow: 0 0 18px rgba(42, 177, 232, 0.1);

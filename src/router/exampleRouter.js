@@ -38,7 +38,7 @@ const TreeView = r => require.ensure([], () => r(require('@/views/exampleTemplat
 const Socket = r => require.ensure([], () => r(require('@/views/exampleTemplate/socket/index.vue')))
 // --------------------------------- 示例页面-end ----------------------------------------------
 
-const chartsRouter = [
+const exampleRouter = [
   {
     path: '/tableView',
     component: Layout,
@@ -240,4 +240,4 @@ const chartsRouter = [
   }
 ]
 
-export default chartsRouter
+export default exampleRouter

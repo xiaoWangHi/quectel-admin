@@ -1,6 +1,6 @@
 <template>
   <el-header class="header-container">
-    <div class="left titleColor h3">Quectel 管理系统</div>
+    <div class="left titleColor h3"> <i class="iconfont iconlist menuIcon" :class="isCollapse ? 'collapse-active' : 'collapse'" @click="collapseChange"></i> &nbsp; Quectel 管理系统</div>
     <div class="right">
       <!-- 日期 -->
       <span class="placeholder font12">{{date}} &nbsp;&nbsp; {{week}}</span>
@@ -42,7 +42,7 @@ import format from 'utils/format'
 import { SettingView } from '../index'
 export default {
   components: { SettingView },
-  computed: { ...mapGetters(['date', 'userInfo']) },
+  computed: { ...mapGetters(['date', 'userInfo', 'isCollapse']) },
   inject: ['reload'],
   data() {
     return {
@@ -57,6 +57,12 @@ export default {
     */
     logout() {
       this.$router.push('/login')
+    },
+    /**
+     * 切换侧边栏样式
+    */
+    collapseChange() {
+      this.$store.dispatch('setCollapse', !this.isCollapse)
     },
     /*
     * 切换中英文
@@ -114,6 +120,19 @@ export default {
     @include fj;
     align-items: center;
     padding: 0 20px !important;
+    .menuIcon{
+      display: inline-block;
+      font-size: 14px;
+      font-weight: 900;
+      margin-right: 10px;
+      cursor: pointer;
+    }
+    .collapse-active{
+      transform:rotate(90deg);
+      -moz-transform:rotate(90deg);
+      -webkit-transform:rotate(90deg);
+      transition: all 0.5s;
+    }
     // .left{
     // }
     .right{

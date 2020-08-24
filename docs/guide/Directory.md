@@ -18,22 +18,6 @@
 │        ├── images            # 静态图片
 │        └── styles            # 公共样式
 │   └── components             # 全局公用组件
-│        ├── BarChart          # 柱状图封装
-│        ├── Breadcrumb        # 面包屑封装
-│        ├── Calendar          # 日历封装
-│        ├── charts            # echarts 封装
-│        ├── countTo           # 数字滚动封装
-│        ├── cropper           # 图片编辑封装
-│        ├── formDialog        # 表单弹窗封装
-│        ├── formTemplate      # 表单弹窗封装
-│        ├── indexTabs         # 标签页封装
-│        ├── inputTree         # 输入框选择树形控件封装
-│        ├── noData            # 暂无数据封装
-│        ├── selectTree        # 树形结构选择封装
-│        ├── Steps             # 步骤条封装
-│        ├── Tips              # 鼠标移入提示封装
-│        ├── treeList          # 树形列表封装
-│        ├── upload            # 上传文件封装
 │        └── index.js          # 公用组件注册文件
 │   └── directive              # 全局自定义指令
 │        ├── picture           # 查看图片指令
