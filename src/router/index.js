@@ -1,8 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-import ExampleRouter from './exampleRouter'
-
 Vue.use(Router)
 
 /* 登录 */
@@ -26,6 +24,16 @@ const Error_403 = r => require.ensure([], () => r(require('@/views/error-page/40
 /* 401 */
 const Error_401 = r => require.ensure([], () => r(require('@/views/error-page/401.vue')))
 
+const modulesFiles = require.context('./modules', true, /\.js$/)
+
+const routerModules = modulesFiles.keys().reduce((modules, modulePath) => {
+  const value = modulesFiles(modulePath)
+  const arr = []
+  arr.push(...value.default)
+  return arr
+}, [])
+
+console.log('routerModules', routerModules)
 /**
  *
  * hidden: true        是否出现在侧边
@@ -61,11 +69,6 @@ export const constantRoutes = [
     component: Login,
     hidden: true
   },
-  // {
-  //   path: '*',
-  //   hidden: true,
-  //   redirect: '/'
-  // },
   {
     path: '/',
     component: Layout,
@@ -112,7 +115,7 @@ export const asyncRoutes = [
       }
     ]
   },
-  ...ExampleRouter
+  ...routerModules
 ]
 
 const createRouter = () => new Router({

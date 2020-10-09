@@ -1,18 +1,21 @@
 <template>
   <div :class="isCollapse ? 'menu-container-collapse' : 'menu-container'">
     <div class="img-box">
-      <img v-if="isCollapse" src="../../../../assets/images/logo297.png" alt="">
+      <img v-if="isCollapse" src="../../../../assets/images/quectel-white-red.png" alt="">
       <img v-else src="../../../../assets/images/logo297.png" alt="">
     </div>
     <div class="menu-content">
-      <el-menu router :default-active="activeIndex" :text-color="isCollapse ? '#1e1e1e' : '#fff'" :active-text-color="isCollapse ? '#2ab1e8' : '#fff'" :collapse='isCollapse'>
+      <el-menu router :default-active="activeIndex" :text-color="isCollapse ? '#1e1e1e' : '#fff'" :active-text-color="isCollapse ? '#2ab1e8' : '#fff'" :collapse='isCollapse' mode='horizontal' :collapse-transition='false'>
         <div v-for="(item, index) in menuRoute" :key="index">
           <!-- 一级菜单 -->
           <router-link tag="div" v-if="!item.children || !item.children.length" replace :to="resolvePath(item.path)">
             <el-menu-item :index="item.path">
-              <div class="title">
+              <div class="title" v-if="isCollapse">
                 <i class="iconfont" :class="item.meta.icon"></i>
-                <span slot="title" v-if="!isCollapse">{{$t('menu.' + item.meta.title)}}</span>
+              </div>
+              <div class="title" v-else>
+                <i class="iconfont" :class="item.meta.icon"></i>
+                <span slot="title">{{$t('menu.' + item.meta.title)}}</span>
               </div>
             </el-menu-item>
           </router-link>
@@ -20,17 +23,23 @@
             <template v-if="hasOneShowingChild(item.children,item) && (!onlyOneChild.children||onlyOneChild.noShowingChildren) && !item.alwaysShow">
               <router-link tag="div" replace :to="resolvePath(onlyOneChild.path)">
                 <el-menu-item :index="resolvePath(onlyOneChild.path)">
-                  <div class="title">
+                  <div class="title" v-if="isCollapse">
                     <i class="iconfont" :class="onlyOneChild.meta.icon"></i>
-                    <span v-if="!isCollapse">{{$t('menu.' + onlyOneChild.meta.title)}}</span>
+                  </div>
+                  <div class="title" v-else>
+                    <i class="iconfont" :class="onlyOneChild.meta.icon"></i>
+                    <span>{{$t('menu.' + onlyOneChild.meta.title)}}</span>
                   </div>
                 </el-menu-item>
               </router-link>
             </template>
             <el-submenu :index="item.path" v-else>
-              <template slot="title">
+              <template slot="title" v-if="isCollapse">
                 <i class="iconfont" :class="item.meta.icon"></i>
-                <span v-if="!isCollapse">{{$t('menu.' + item.meta.title)}}</span>
+              </template>
+              <template slot="title" v-else>
+                <i class="iconfont" :class="item.meta.icon"></i>
+                <span>{{$t('menu.' + item.meta.title)}}</span>
               </template>
               <router-link tag="div" v-for="(child, cIndex) in item.children" :key="cIndex" replace :to="resolvePath(child.path)">
                 <el-menu-item :index="child.path">
@@ -213,12 +222,12 @@ export default {
   background-size: cover;
   overflow: hidden;
   .img-box{
-    width: 90px;
+    width: 60px;
     height: 60px;
     line-height: 60px;
     overflow: hidden;
     margin: 0 auto;
-    margin-top: 20px;
+    margin-top: 6px;
     border-bottom: 1px solid rgba(250, 250, 250, 0.15);
     img{
       width: auto;

@@ -11,7 +11,8 @@ const globals = {
     isIE: !!window.ActiveXObject || 'ActiveXObject' in window,
     upBtn: true,
     isBreadCrumb: true,
-    isCollapse: true
+    isCollapse: true,
+    mode: 'vertical'
   },
   mutations: {
     setMsec: (state, msec) => {
@@ -36,6 +37,9 @@ const globals = {
     },
     SET_IS_COLLAPSE: (state, collapse) => {
       state.isCollapse = collapse
+    },
+    SET_MODE: (state, mode) => {
+      state.mode = mode
     }
   },
   actions: {
@@ -55,6 +59,9 @@ const globals = {
     },
     setCollapse({ commit }, state) {
       commit('SET_IS_COLLAPSE', state)
+    },
+    setMode({ commit }, mode) {
+      commit('SET_MODE', mode)
     }
   }
 }

@@ -40,9 +40,10 @@ Vue.mixin(Mixin)
 
 new Vue({
   el: '#app',
+  i18n,
   router,
   store,
-  i18n,
+
   template: '<App/>',
   components: { App }
 })
